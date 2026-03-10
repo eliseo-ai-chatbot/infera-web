@@ -199,7 +199,7 @@ export default function InferaPage() {
           <div className="text-center max-w-xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">¿Tenés un problema de datos o IA en tu empresa?</h2>
             <p className="text-indigo-200 mb-8">
-              Contanos el desafío y evaluamos juntos si y cómo la IA puede ayudarte.
+              Contanos el desafío y evaluamos juntos cómo la IA puede ayudarte.
               Primera conversación sin costo.
             </p>
             <Button href="/contacto" variant="secondary" size="lg">

@@ -58,8 +58,7 @@ export default function Button(props: ButtonProps) {
     );
   }
 
-  const { variant: _v, size: _s, className: _c, href: _h, children: _ch, ...rest } = props as ButtonAsButton;
-  void _v; void _s; void _c; void _h;
+  const { variant: _v, size: _s, className: _c, href: _href, children: _ch, ...rest } = props as ButtonAsButton;
 
   return (
     <button {...rest} className={classes}>
