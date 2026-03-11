@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
-import SectionHeading from '@/components/ui/SectionHeading';
 
 export const metadata: Metadata = {
   title: 'Industrias y casos de uso',

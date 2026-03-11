@@ -4,7 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://infera.com.ar'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? 'https://infera.com.ar'),
   title: {
     default: 'Infera — IA aplicada para PyMEs | Eliseo, asistente de mantenimiento por WhatsApp',
     template: '%s | Infera',

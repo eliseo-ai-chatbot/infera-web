@@ -58,7 +58,9 @@ export default function Button(props: ButtonProps) {
     );
   }
 
-  const { variant: _v, size: _s, className: _c, href: _href, children: _ch, ...rest } = props as ButtonAsButton;
+  // Extract custom props; spread only native button attributes
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { variant: _v, size: _s, className: _c, children: _ch, ...rest } = props as ButtonAsButton;
 
   return (
     <button {...rest} className={classes}>

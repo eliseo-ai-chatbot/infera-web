@@ -43,6 +43,7 @@ export default function ContactForm() {
         </p>
         <button
           onClick={() => { setForm(initialState); setSubmitted(false); }}
+          aria-label="Volver al formulario para enviar otro mensaje"
           className="mt-4 text-sm text-green-600 underline hover:text-green-800"
         >
           Enviar otro mensaje

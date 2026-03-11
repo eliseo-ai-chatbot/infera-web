@@ -1,6 +1,6 @@
 # Infera Web
 
-Sitio de marketing de [Infera](/) y su producto principal [Eliseo](/eliseo).
+Sitio de marketing de Infera y su producto principal Eliseo.
 
 ## Stack
 
@@ -53,6 +53,7 @@ cp .env.example .env.local
 | Variable | Descripción | Ejemplo |
 |----------|-------------|---------|
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número de WhatsApp para contacto comercial (formato internacional) | `+5491100000000` |
+| `NEXT_PUBLIC_BASE_URL` | URL base del sitio (usada para metadatos SEO y OpenGraph) | `https://infera.com.ar` |
 
 ## Rutas
 

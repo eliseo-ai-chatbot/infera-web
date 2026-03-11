@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -92,7 +91,7 @@ export default function HomePage() {
               reclamos de mantenimiento
             </h1>
             <p className="text-xl sm:text-2xl text-indigo-200 mb-10 max-w-2xl mx-auto">
-              Menos &ldquo;call center&rdquo; por WhatsApp. Más gestión real.
+              Menos “call center” por WhatsApp. Más gestión real.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/contacto" variant="primary" size="lg">
