@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["copilot/update-marketing-website-colors"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
