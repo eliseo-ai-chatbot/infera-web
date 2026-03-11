@@ -27,13 +27,13 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-indigo-600 text-white hover:bg-indigo-700 focus-visible:ring-indigo-500 border border-transparent',
+    'bg-gradient-to-r from-indigo-500 to-violet-600 text-white hover:shadow-glow hover:from-indigo-400 hover:to-violet-500 focus-visible:ring-indigo-500 border border-transparent transition-shadow',
   secondary:
-    'bg-white text-indigo-600 hover:bg-indigo-50 focus-visible:ring-indigo-500 border border-indigo-600',
+    'bg-transparent text-white hover:bg-white/10 focus-visible:ring-white/50 border border-white/30 hover:border-white/50',
   outline:
-    'bg-transparent text-indigo-600 hover:bg-indigo-50 focus-visible:ring-indigo-500 border border-indigo-600',
+    'bg-transparent text-indigo-400 hover:bg-indigo-500/10 focus-visible:ring-indigo-500 border border-indigo-500/50 hover:border-indigo-400',
   ghost:
-    'bg-transparent text-indigo-600 hover:bg-indigo-50 focus-visible:ring-indigo-500 border border-transparent',
+    'bg-transparent text-indigo-400 hover:bg-indigo-500/10 focus-visible:ring-indigo-500 border border-transparent',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -43,7 +43,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 };
 
 const baseClasses =
-  'inline-flex items-center justify-center rounded-lg font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+  'inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 disabled:opacity-50 disabled:cursor-not-allowed';
 
 export default function Button(props: ButtonProps) {
   const { variant = 'primary', size = 'md', className = '', children } = props;

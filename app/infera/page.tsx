@@ -72,16 +72,18 @@ export default function InferaPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900 text-white py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden bg-zinc-950 py-20 sm:py-28">
+        <div className="absolute inset-0 bg-hero-radial" />
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+        <Container className="relative">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <span className="inline-block bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               Sobre Infera
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 text-white">
               IA aplicada para PyMEs: de los datos al impacto operativo
             </h1>
-            <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
               Somos una consultora de inteligencia artificial con sede en Buenos Aires.
               Diseñamos, construimos y mantenemos soluciones de datos y ML que generan
               resultados reales para empresas medianas.
@@ -94,7 +96,7 @@ export default function InferaPage() {
       </section>
 
       {/* What we do */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-950">
         <Container>
           <SectionHeading
             eyebrow="Qué hacemos"
@@ -105,11 +107,11 @@ export default function InferaPage() {
             {services.map((s) => (
               <div
                 key={s.title}
-                className="bg-white rounded-2xl border border-slate-200 p-7 hover:shadow-lg hover:border-indigo-200 transition-all"
+                className="bg-slate-900 rounded-2xl border border-white/8 p-7 hover:border-indigo-500/40 hover:shadow-glow transition-all"
               >
                 <span className="text-3xl mb-4 block">{s.icon}</span>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{s.title}</h3>
-                <p className="text-sm text-slate-600 mb-5">{s.desc}</p>
+                <h3 className="text-lg font-bold text-slate-100 mb-2">{s.title}</h3>
+                <p className="text-sm text-slate-400 mb-5">{s.desc}</p>
                 <ul className="space-y-2">
                   {s.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-xs text-slate-500">
@@ -125,7 +127,7 @@ export default function InferaPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-indigo-50">
+      <section className="py-20 bg-zinc-950">
         <Container>
           <SectionHeading
             eyebrow="Nuestra forma de trabajar"
@@ -133,10 +135,10 @@ export default function InferaPage() {
           />
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
-              <div key={v.title} className="bg-white rounded-xl p-6 border border-indigo-100">
+              <div key={v.title} className="bg-slate-900 rounded-xl p-6 border border-white/8">
                 <span className="text-2xl mb-3 block">{v.icon}</span>
-                <h3 className="font-bold text-slate-800 mb-2">{v.title}</h3>
-                <p className="text-sm text-slate-600">{v.desc}</p>
+                <h3 className="font-bold text-slate-100 mb-2">{v.title}</h3>
+                <p className="text-sm text-slate-400">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -144,7 +146,7 @@ export default function InferaPage() {
       </section>
 
       {/* Why PyMEs */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-950">
         <Container>
           <div className="max-w-3xl mx-auto">
             <SectionHeading
@@ -152,7 +154,7 @@ export default function InferaPage() {
               title="La IA no es solo para grandes empresas"
               centered={false}
             />
-            <div className="mt-6 space-y-4 text-slate-600">
+            <div className="mt-6 space-y-4 text-slate-400">
               <p>
                 La mayoría de las soluciones de IA están diseñadas para empresas con equipos de
                 datos de decenas de personas y presupuestos de millones de dólares. Las PyMEs
@@ -174,13 +176,13 @@ export default function InferaPage() {
       </section>
 
       {/* Eliseo showcase */}
-      <section className="py-20 bg-slate-900 text-white">
+      <section className="py-20 bg-zinc-950">
         <Container>
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400 mb-3">
               Nuestro producto
             </p>
-            <h2 className="text-3xl font-bold mb-4">Eliseo: IA aplicada al mantenimiento</h2>
+            <h2 className="text-3xl font-bold text-slate-100 mb-4">Eliseo: IA aplicada al mantenimiento</h2>
             <p className="text-slate-400 mb-8">
               Eliseo es la materialización de nuestra filosofía: un problema real, un canal existente
               (WhatsApp), y una solución que funciona desde el día uno. Comenzó en consorcios y hoy
@@ -194,10 +196,11 @@ export default function InferaPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-indigo-600 text-white">
-        <Container>
+      <section className="py-20 bg-cta-gradient relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-15" />
+        <Container className="relative">
           <div className="text-center max-w-xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">¿Tenés un problema de datos o IA en tu empresa?</h2>
+            <h2 className="text-3xl font-bold mb-4 text-white">¿Tenés un problema de datos o IA en tu empresa?</h2>
             <p className="text-indigo-200 mb-8">
               Contanos el desafío y evaluamos juntos cómo la IA puede ayudarte.
               Primera conversación sin costo.

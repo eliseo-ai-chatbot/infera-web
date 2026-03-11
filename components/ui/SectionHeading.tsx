@@ -16,13 +16,13 @@ export default function SectionHeading({
   return (
     <div className={`${centered ? 'text-center' : ''} ${className}`}>
       {eyebrow && (
-        <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600 mb-2">
+        <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400 mb-2">
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{title}</h2>
+      <h2 className="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl">{title}</h2>
       {subtitle && (
-        <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
+        <p className="mt-4 text-lg text-slate-400 max-w-3xl mx-auto">{subtitle}</p>
       )}
     </div>
   );

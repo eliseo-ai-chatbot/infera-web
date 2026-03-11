@@ -89,17 +89,19 @@ export default function EliseoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 to-indigo-950 text-white py-24 sm:py-32">
-        <Container>
+      <section className="relative overflow-hidden bg-zinc-950 py-24 sm:py-32">
+        <div className="absolute inset-0 bg-hero-radial" />
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-25" />
+        <Container className="relative">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block bg-green-500/20 border border-green-400/30 text-green-300 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <span className="inline-block bg-green-500/15 border border-green-500/30 text-green-300 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               Eliseo
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 text-white">
               El asistente de mantenimiento que vive en{' '}
               <span className="text-green-400">WhatsApp</span>
             </h1>
-            <p className="text-xl text-slate-300 mb-10">
+            <p className="text-xl text-slate-400 mb-10">
               Recibe reclamos, hace las preguntas correctas, clasifica, deriva y confirma.
               Disponible 24/7. Sin apps adicionales. Con conversación de verdad.
             </p>
@@ -116,7 +118,7 @@ export default function EliseoPage() {
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-950">
         <Container>
           <SectionHeading
             eyebrow="Funcionalidades"
@@ -127,11 +129,11 @@ export default function EliseoPage() {
             {features.map((f) => (
               <div
                 key={f.title}
-                className="p-6 rounded-xl border border-slate-200 bg-white hover:border-indigo-200 hover:shadow-md transition-all"
+                className="p-6 rounded-xl border border-white/8 bg-slate-900 hover:border-indigo-500/40 hover:shadow-card transition-all"
               >
                 <span className="text-2xl mb-3 block">{f.icon}</span>
-                <h3 className="font-bold text-slate-800 mb-2">{f.title}</h3>
-                <p className="text-sm text-slate-500">{f.desc}</p>
+                <h3 className="font-bold text-slate-100 mb-2">{f.title}</h3>
+                <p className="text-sm text-slate-400">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -139,7 +141,7 @@ export default function EliseoPage() {
       </section>
 
       {/* Differentiators */}
-      <section className="py-20 bg-indigo-50">
+      <section className="py-20 bg-zinc-950">
         <Container>
           <SectionHeading
             eyebrow="Diferencial"
@@ -148,12 +150,12 @@ export default function EliseoPage() {
           />
           <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {differentiators.map((d) => (
-              <div key={d.title} className="bg-white rounded-xl p-6 border border-indigo-100 shadow-sm">
-                <h3 className="font-bold text-indigo-900 mb-2 flex items-center gap-2">
+              <div key={d.title} className="bg-slate-900 rounded-xl p-6 border border-indigo-500/20">
+                <h3 className="font-bold text-slate-100 mb-2 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-indigo-500 inline-block" />
                   {d.title}
                 </h3>
-                <p className="text-sm text-slate-600">{d.desc}</p>
+                <p className="text-sm text-slate-400">{d.desc}</p>
               </div>
             ))}
           </div>
@@ -161,21 +163,21 @@ export default function EliseoPage() {
       </section>
 
       {/* Consorcio use cases */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-950">
         <Container>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600 mb-2">
+              <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400 mb-2">
                 Caso de uso principal
               </p>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              <h2 className="text-3xl font-bold text-slate-100 mb-4">
                 Consorcios y administraciones
               </h2>
-              <p className="text-slate-600 mb-6">
+              <p className="text-slate-400 mb-6">
                 Eliseo nació para resolver el problema más común de cualquier administradora de consorcios:
                 el desbordamiento de reclamos sin estructura, sin seguimiento y sin trazabilidad.
               </p>
-              <p className="text-slate-600 mb-8">
+              <p className="text-slate-400 mb-8">
                 Hoy maneja los tipos de reclamos más frecuentes con total autonomía, escalando
                 solo cuando es necesario.
               </p>
@@ -184,14 +186,14 @@ export default function EliseoPage() {
               </Button>
             </div>
             <div>
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                <h3 className="font-semibold text-slate-700 mb-4 text-sm uppercase tracking-wide">
+              <div className="bg-slate-900 rounded-2xl p-6 border border-white/8">
+                <h3 className="font-semibold text-slate-400 mb-4 text-sm uppercase tracking-wide">
                   Tipos de reclamos que maneja Eliseo
                 </h3>
                 <ul className="space-y-2">
                   {consorcioCases.map((c) => (
-                    <li key={c} className="flex items-center gap-2 text-sm text-slate-600">
-                      <span className="text-green-500">✓</span>
+                    <li key={c} className="flex items-center gap-2 text-sm text-slate-300">
+                      <span className="text-green-400">✓</span>
                       {c}
                     </li>
                   ))}
@@ -203,7 +205,7 @@ export default function EliseoPage() {
       </section>
 
       {/* Integration */}
-      <section className="py-20 bg-slate-900 text-white">
+      <section className="py-20 bg-zinc-950">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <SectionHeading
@@ -228,9 +230,9 @@ export default function EliseoPage() {
                   desc: 'Arrancamos con un piloto, medimos, ajustamos y mejoramos con datos reales.',
                 },
               ].map((item) => (
-                <div key={item.step} className="bg-slate-800 rounded-xl p-6">
+                <div key={item.step} className="bg-slate-900 rounded-xl p-6 border border-white/8">
                   <div className="text-3xl font-black text-indigo-500 mb-3">{item.step}</div>
-                  <h3 className="font-bold text-white mb-2">{item.title}</h3>
+                  <h3 className="font-bold text-slate-100 mb-2">{item.title}</h3>
                   <p className="text-sm text-slate-400">{item.desc}</p>
                 </div>
               ))}
@@ -240,10 +242,11 @@ export default function EliseoPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
-        <Container>
+      <section className="py-20 bg-cta-gradient relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-15" />
+        <Container className="relative">
           <div className="text-center max-w-xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">¿Listo para probar Eliseo?</h2>
+            <h2 className="text-3xl font-bold mb-4 text-white">¿Listo para probar Eliseo?</h2>
             <p className="text-indigo-200 mb-8">
               Contactanos y armamos un piloto para tu administración en días, no meses.
             </p>
@@ -256,7 +259,7 @@ export default function EliseoPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 size="lg"
-                className="bg-green-500 border-green-500 text-white hover:bg-green-600 hover:border-green-600 border"
+                className="bg-green-500/15 border border-green-400/40 text-green-300 hover:bg-green-500/25 transition-colors"
               >
                 💬 WhatsApp directo
               </Button>

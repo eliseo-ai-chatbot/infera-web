@@ -78,20 +78,21 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-indigo-900 to-indigo-800 text-white">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+      <section className="relative overflow-hidden bg-zinc-950">
+        <div className="absolute inset-0 bg-hero-radial" />
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-30" />
         <Container className="relative py-24 sm:py-32">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <span className="inline-block bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               Producto de Infera
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white">
               Eliseo: el asistente por{' '}
               <span className="text-green-400">WhatsApp</span> que ordena los
               reclamos de mantenimiento
             </h1>
-            <p className="text-xl sm:text-2xl text-indigo-200 mb-10 max-w-2xl mx-auto">
-              Menos “call center” por WhatsApp. Más gestión real.
+            <p className="text-xl sm:text-2xl text-slate-400 mb-10 max-w-2xl mx-auto">
+              Menos &ldquo;call center&rdquo; por WhatsApp. Más gestión real.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/contacto" variant="primary" size="lg">
@@ -101,9 +102,8 @@ export default function HomePage() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                variant="secondary"
                 size="lg"
-                className="bg-green-500 border-green-500 text-white hover:bg-green-600 hover:border-green-600"
+                className="bg-green-500/15 border border-green-500/40 text-green-400 hover:bg-green-500/25 hover:border-green-400/60 transition-colors"
               >
                 💬 Hablar por WhatsApp
               </Button>
@@ -113,7 +113,7 @@ export default function HomePage() {
       </section>
 
       {/* Pain section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-slate-950">
         <Container>
           <SectionHeading
             eyebrow="El problema"
@@ -124,11 +124,11 @@ export default function HomePage() {
             {painPoints.map((p) => (
               <div
                 key={p.title}
-                className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm"
+                className="bg-slate-900 rounded-xl p-6 border border-white/8 shadow-card hover:border-white/15 transition-colors"
               >
                 <span className="text-3xl mb-3 block">{p.icon}</span>
-                <h3 className="font-bold text-slate-800 mb-2">{p.title}</h3>
-                <p className="text-sm text-slate-600">{p.desc}</p>
+                <h3 className="font-bold text-slate-100 mb-2">{p.title}</h3>
+                <p className="text-sm text-slate-400">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -136,21 +136,21 @@ export default function HomePage() {
       </section>
 
       {/* What is Eliseo */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-zinc-950">
         <Container>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600 mb-2">
+              <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400 mb-2">
                 La solución
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 mb-6">
                 ¿Qué es Eliseo?
               </h2>
-              <p className="text-lg text-slate-600 mb-4">
+              <p className="text-lg text-slate-400 mb-4">
                 Eliseo es un asistente conversacional que vive en WhatsApp — sin app, sin portal, sin fricción.
                 Atiende los reclamos de mantenimiento con un estilo de conversación humano y fluido.
               </p>
-              <p className="text-lg text-slate-600 mb-6">
+              <p className="text-lg text-slate-400 mb-6">
                 Recibe el mensaje, hace las preguntas correctas, estructura el reclamo y lo deriva al
                 equipo o proveedor adecuado con todo el contexto necesario.
               </p>
@@ -158,7 +158,7 @@ export default function HomePage() {
                 Conocer Eliseo en detalle →
               </Button>
             </div>
-            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-8 border border-indigo-200">
+            <div className="bg-slate-900 rounded-2xl p-8 border border-white/8 shadow-card">
               <div className="space-y-4">
                 {[
                   { from: 'them', msg: 'Hola, tengo una pérdida de agua en el baño del depto 4B' },
@@ -173,7 +173,7 @@ export default function HomePage() {
                     <div
                       className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm ${
                         m.from === 'eliseo'
-                          ? 'bg-white text-slate-700 shadow-sm border border-slate-100'
+                          ? 'bg-slate-800 text-slate-300 border border-white/8'
                           : 'bg-green-500 text-white'
                       }`}
                     >
@@ -182,14 +182,14 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <p className="mt-4 text-xs text-center text-indigo-400">Conversación de ejemplo con Eliseo</p>
+              <p className="mt-4 text-xs text-center text-slate-500">Conversación de ejemplo con Eliseo</p>
             </div>
           </div>
         </Container>
       </section>
 
       {/* How it works */}
-      <section className="py-20 bg-indigo-950 text-white">
+      <section className="py-20 bg-slate-950">
         <Container>
           <SectionHeading
             eyebrow="Cómo funciona"
@@ -199,9 +199,9 @@ export default function HomePage() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((step) => (
               <div key={step.number} className="relative">
-                <div className="text-5xl font-black text-indigo-800 mb-3">{step.number}</div>
-                <h3 className="font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-sm text-indigo-300">{step.desc}</p>
+                <div className="text-5xl font-black text-indigo-900 mb-3">{step.number}</div>
+                <h3 className="font-bold text-slate-100 mb-2">{step.title}</h3>
+                <p className="text-sm text-slate-400">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -214,34 +214,34 @@ export default function HomePage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-zinc-950">
         <Container>
           <SectionHeading
             eyebrow="Beneficios"
             title="Gana la administración. Ganan los consorcistas."
           />
           <div className="mt-12 grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-            <div className="bg-indigo-50 rounded-2xl p-8 border border-indigo-100">
-              <h3 className="text-lg font-bold text-indigo-900 mb-5">
+            <div className="bg-slate-900 rounded-2xl p-8 border border-indigo-500/20">
+              <h3 className="text-lg font-bold text-slate-100 mb-5">
                 🏢 Para la administradora
               </h3>
               <ul className="space-y-3">
                 {adminBenefits.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-sm text-slate-700">
-                    <span className="text-green-500 font-bold mt-0.5">✓</span>
+                  <li key={b} className="flex items-start gap-2 text-sm text-slate-300">
+                    <span className="text-green-400 font-bold mt-0.5">✓</span>
                     {b}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-green-50 rounded-2xl p-8 border border-green-100">
-              <h3 className="text-lg font-bold text-green-900 mb-5">
+            <div className="bg-slate-900 rounded-2xl p-8 border border-green-500/20">
+              <h3 className="text-lg font-bold text-slate-100 mb-5">
                 🏠 Para propietarios y consorcistas
               </h3>
               <ul className="space-y-3">
                 {residentBenefits.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-sm text-slate-700">
-                    <span className="text-green-500 font-bold mt-0.5">✓</span>
+                  <li key={b} className="flex items-start gap-2 text-sm text-slate-300">
+                    <span className="text-green-400 font-bold mt-0.5">✓</span>
                     {b}
                   </li>
                 ))}
@@ -252,7 +252,7 @@ export default function HomePage() {
       </section>
 
       {/* Industries teaser */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-slate-950">
         <Container>
           <SectionHeading
             eyebrow="Industrias"
@@ -263,7 +263,7 @@ export default function HomePage() {
             {['🏢 Consorcios (HOA)', '🏨 Hoteles y hotelería', '🏭 Plantas industriales', '🏗️ Edificios corporativos'].map((ind) => (
               <span
                 key={ind}
-                className="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium text-slate-700 shadow-sm"
+                className="bg-slate-900 border border-white/10 rounded-full px-5 py-2 text-sm font-medium text-slate-300 hover:border-indigo-500/50 hover:text-slate-100 transition-colors"
               >
                 {ind}
               </span>
@@ -278,10 +278,11 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
-        <Container>
+      <section className="py-24 bg-cta-gradient relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-15" />
+        <Container className="relative">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
               ¿Querés ver Eliseo en acción?
             </h2>
             <p className="text-indigo-200 text-lg mb-8">
@@ -296,7 +297,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 size="lg"
-                className="bg-green-500 border-green-500 text-white hover:bg-green-600 hover:border-green-600 border"
+                className="bg-green-500/15 border border-green-400/40 text-green-300 hover:bg-green-500/25 transition-colors"
               >
                 💬 WhatsApp directo
               </Button>
@@ -306,14 +307,14 @@ export default function HomePage() {
       </section>
 
       {/* About Infera teaser */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-zinc-950">
         <Container>
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-3">
+            <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 mb-3">
               Detrás de Eliseo
             </p>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Infera</h2>
-            <p className="text-slate-600 mb-6">
+            <h2 className="text-2xl font-bold text-slate-100 mb-4">Infera</h2>
+            <p className="text-slate-400 mb-6">
               Somos una consultora de IA para PyMEs con sede en Buenos Aires. Diseñamos, construimos
               y mantenemos soluciones de datos, ML e IA que generan impacto operativo real.
             </p>

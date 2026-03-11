@@ -12,6 +12,9 @@ interface FormState {
 
 const initialState: FormState = { name: '', email: '', company: '', message: '' };
 
+const inputClasses =
+  'w-full rounded-lg border border-white/10 bg-slate-900 px-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500/50 transition-colors';
+
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitted, setSubmitted] = useState(false);
@@ -31,12 +34,12 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
+      <div className="bg-green-500/10 border border-green-500/25 rounded-xl p-8 text-center">
         <span className="text-4xl mb-3 block">🎉</span>
-        <h3 className="text-lg font-bold text-green-900 mb-2">¡Gracias por escribirnos!</h3>
-        <p className="text-sm text-green-700">
+        <h3 className="text-lg font-bold text-green-300 mb-2">¡Gracias por escribirnos!</h3>
+        <p className="text-sm text-green-400/80">
           Tu cliente de correo debería haberse abierto. Si no, escribinos directamente a{' '}
-          <a href="mailto:hola@infera.com.ar" className="underline font-medium">
+          <a href="mailto:hola@infera.com.ar" className="underline font-medium text-green-300">
             hola@infera.com.ar
           </a>
           .
@@ -44,7 +47,7 @@ export default function ContactForm() {
         <button
           onClick={() => { setForm(initialState); setSubmitted(false); }}
           aria-label="Volver al formulario para enviar otro mensaje"
-          className="mt-4 text-sm text-green-600 underline hover:text-green-800"
+          className="mt-4 text-sm text-green-400 underline hover:text-green-200 transition-colors"
         >
           Enviar otro mensaje
         </button>
@@ -55,8 +58,8 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
-          Nombre <span className="text-red-500">*</span>
+        <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-1">
+          Nombre <span className="text-red-400">*</span>
         </label>
         <input
           id="name"
@@ -66,13 +69,13 @@ export default function ContactForm() {
           value={form.name}
           onChange={handleChange}
           placeholder="Tu nombre"
-          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+          className={inputClasses}
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
-          Email <span className="text-red-500">*</span>
+        <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-1">
+          Email <span className="text-red-400">*</span>
         </label>
         <input
           id="email"
@@ -82,12 +85,12 @@ export default function ContactForm() {
           value={form.email}
           onChange={handleChange}
           placeholder="tu@empresa.com"
-          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+          className={inputClasses}
         />
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">
+        <label htmlFor="company" className="block text-sm font-medium text-slate-300 mb-1">
           Empresa / Administración
         </label>
         <input
@@ -97,13 +100,13 @@ export default function ContactForm() {
           value={form.company}
           onChange={handleChange}
           placeholder="Nombre de tu empresa u organización"
-          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+          className={inputClasses}
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">
-          Mensaje <span className="text-red-500">*</span>
+        <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-1">
+          Mensaje <span className="text-red-400">*</span>
         </label>
         <textarea
           id="message"
@@ -113,7 +116,7 @@ export default function ContactForm() {
           value={form.message}
           onChange={handleChange}
           placeholder="Contanos brevemente tu situación actual y qué te gustaría resolver..."
-          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors resize-none"
+          className={`${inputClasses} resize-none`}
         />
       </div>
 
@@ -121,9 +124,9 @@ export default function ContactForm() {
         Enviar mensaje →
       </Button>
 
-      <p className="text-xs text-slate-400 text-center">
+      <p className="text-xs text-slate-500 text-center">
         Al enviar, se abrirá tu cliente de correo. También podés escribirnos directamente a{' '}
-        <a href="mailto:hola@infera.com.ar" className="underline">
+        <a href="mailto:hola@infera.com.ar" className="underline text-slate-400 hover:text-slate-200 transition-colors">
           hola@infera.com.ar
         </a>
         .
