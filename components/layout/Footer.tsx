@@ -17,7 +17,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="bg-zinc-950 text-slate-400 border-t border-white/8">
       <Container>
         <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -25,10 +25,10 @@ export default function Footer() {
             <Link href="/" className="text-white font-bold text-xl tracking-tight">
               Infera
             </Link>
-            <p className="mt-3 text-sm text-slate-400 max-w-xs">
+            <p className="mt-3 text-sm text-slate-500 max-w-xs">
               IA aplicada para PyMEs: de los datos al impacto operativo. Sede en Buenos Aires, Argentina.
             </p>
-            <p className="mt-4 text-xs text-slate-500">
+            <p className="mt-4 text-xs text-slate-600">
               Producto destacado:{' '}
               <Link href="/eliseo" className="text-indigo-400 hover:text-indigo-300 underline">
                 Eliseo
@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* Product links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">
               Producto
             </h3>
             <ul className="space-y-2">
@@ -47,7 +47,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-300 hover:text-white transition-colors"
+                    className="text-sm text-slate-400 hover:text-slate-100 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Company links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">
               Empresa
             </h3>
             <ul className="space-y-2">
@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-300 hover:text-white transition-colors"
+                    className="text-sm text-slate-400 hover:text-slate-100 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -76,11 +76,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-slate-500">
+        <div className="border-t border-white/8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-slate-600">
             © {year} Infera. Todos los derechos reservados.
           </p>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-600">
             Buenos Aires, Argentina
           </p>
         </div>

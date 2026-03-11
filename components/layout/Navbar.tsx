@@ -16,12 +16,12 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-white/8 shadow-card">
       <Container>
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 text-indigo-700 font-bold text-xl tracking-tight">
-            <span className="inline-block w-7 h-7 rounded-md bg-indigo-600 text-white flex items-center justify-center text-sm font-black">I</span>
+          <Link href="/" className="flex items-center gap-2 text-white font-bold text-xl tracking-tight">
+            <span className="inline-flex w-7 h-7 rounded-md bg-gradient-to-br from-indigo-500 to-violet-600 text-white items-center justify-center text-sm font-black">I</span>
             Infera
           </Link>
 
@@ -31,7 +31,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors"
+                  className="text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -48,7 +48,7 @@ export default function Navbar() {
 
           {/* Hamburger */}
           <button
-            className="md:hidden p-2 rounded-md text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"
+            className="md:hidden p-2 rounded-md text-slate-400 hover:text-slate-100 hover:bg-white/8 transition-colors"
             onClick={() => setOpen(!open)}
             aria-label="Abrir menú"
             aria-expanded={open}
@@ -68,7 +68,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-slate-100 bg-white">
+        <div className="md:hidden border-t border-white/8 bg-zinc-950/95">
           <Container>
             <ul className="py-3 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -76,7 +76,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block px-2 py-2 text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+                    className="block px-2 py-2 text-sm font-medium text-slate-400 hover:text-slate-100 hover:bg-white/6 rounded-md transition-colors"
                   >
                     {link.label}
                   </Link>

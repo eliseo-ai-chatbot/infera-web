@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
+@theme {
+  /* ── Glow / elevation shadows ──────────────────────────── */
+  --shadow-glow: 0 0 0 1px rgba(99,102,241,0.25), 0 4px 32px rgba(99,102,241,0.22), 0 0 64px rgba(34,211,238,0.08);
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+
+  /* ── Hero radial gradient (multi-layer glow) ────────────── */
+  --background-image-hero-radial: radial-gradient(900px circle at 20% 0%, rgba(99,102,241,0.40) 0%, transparent 60%),
+    radial-gradient(800px circle at 70% 30%, rgba(34,211,238,0.15) 0%, transparent 55%),
+    radial-gradient(900px circle at 40% 100%, rgba(139,92,246,0.18) 0%, transparent 60%);
+
+  /* ── CTA section gradient ───────────────────────────────── */
+  --background-image-cta-gradient: linear-gradient(135deg, #4338CA 0%, #6D28D9 50%, #4338CA 100%);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  color-scheme: dark;
 }
 
 html {
@@ -10,9 +23,22 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #09090b;
+  color: #e2e8f0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+}
+
+/* Subtle dot/grid background overlay (apply as extra layer on hero sections) */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
 }

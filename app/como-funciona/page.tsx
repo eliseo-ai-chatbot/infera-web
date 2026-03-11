@@ -98,16 +98,18 @@ export default function ComoFuncionaPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden bg-zinc-950 py-20 sm:py-28">
+        <div className="absolute inset-0 bg-hero-radial" />
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+        <Container className="relative">
           <div className="max-w-2xl mx-auto text-center">
-            <span className="inline-block bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <span className="inline-block bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               El proceso
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 text-white">
               Cómo funciona Eliseo
             </h1>
-            <p className="text-xl text-slate-300">
+            <p className="text-xl text-slate-400">
               Cuatro pasos que convierten el caos de WhatsApp en un flujo de trabajo
               claro, estructurado y trazable.
             </p>
@@ -116,7 +118,7 @@ export default function ComoFuncionaPage() {
       </section>
 
       {/* Steps */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-950">
         <Container>
           <div className="space-y-20">
             {steps.map((step, idx) => (
@@ -128,20 +130,20 @@ export default function ComoFuncionaPage() {
               >
                 <div className={idx % 2 === 1 ? 'md:order-2' : ''}>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl font-black text-slate-200">{step.number}</span>
+                    <span className="text-4xl font-black text-slate-700">{step.number}</span>
                     <span className="text-3xl">{step.icon}</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 mb-4">
                     {step.title}
                   </h2>
-                  <p className="text-slate-600 mb-6">{step.desc}</p>
+                  <p className="text-slate-400 mb-6">{step.desc}</p>
                 </div>
                 <div className={idx % 2 === 1 ? 'md:order-1' : ''}>
-                  <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                  <div className="bg-slate-900 rounded-2xl p-6 border border-white/8">
                     <ul className="space-y-3">
                       {step.detail.map((d) => (
-                        <li key={d} className="flex items-start gap-3 text-sm text-slate-700">
-                          <span className="mt-0.5 w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 text-xs flex items-center justify-center font-bold flex-shrink-0">
+                        <li key={d} className="flex items-start gap-3 text-sm text-slate-300">
+                          <span className="mt-0.5 w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-400 text-xs flex items-center justify-center font-bold flex-shrink-0">
                             ✓
                           </span>
                           {d}
@@ -157,7 +159,7 @@ export default function ComoFuncionaPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-zinc-950">
         <Container>
           <SectionHeading
             eyebrow="Preguntas frecuentes"
@@ -165,9 +167,9 @@ export default function ComoFuncionaPage() {
           />
           <div className="mt-10 max-w-3xl mx-auto space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white rounded-xl p-6 border border-slate-200">
-                <h3 className="font-semibold text-slate-900 mb-2">{faq.q}</h3>
-                <p className="text-sm text-slate-600">{faq.a}</p>
+              <div key={faq.q} className="bg-slate-900 rounded-xl p-6 border border-white/8">
+                <h3 className="font-semibold text-slate-100 mb-2">{faq.q}</h3>
+                <p className="text-sm text-slate-400">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -175,10 +177,11 @@ export default function ComoFuncionaPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-indigo-600 text-white">
-        <Container>
+      <section className="py-20 bg-cta-gradient relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-15" />
+        <Container className="relative">
           <div className="text-center max-w-xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">¿Listo para verlo en vivo?</h2>
+            <h2 className="text-3xl font-bold mb-4 text-white">¿Listo para verlo en vivo?</h2>
             <p className="text-indigo-200 mb-8">
               La mejor forma de entender cómo funciona Eliseo es interactuar con él. Pedí una demo y te lo mostramos.
             </p>
@@ -191,7 +194,7 @@ export default function ComoFuncionaPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 size="lg"
-                className="bg-green-500 border-green-500 text-white hover:bg-green-600 hover:border-green-600 border"
+                className="bg-green-500/15 border border-green-400/40 text-green-300 hover:bg-green-500/25 transition-colors"
               >
                 💬 Hablar por WhatsApp
               </Button>

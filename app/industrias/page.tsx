@@ -114,16 +114,18 @@ export default function IndustriasPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden bg-zinc-950 py-20 sm:py-28">
+        <div className="absolute inset-0 bg-hero-radial" />
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+        <Container className="relative">
           <div className="max-w-2xl mx-auto text-center">
-            <span className="inline-block bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <span className="inline-block bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               Industrias
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 text-white">
               Eliseo se adapta a cualquier lugar donde haya mantenimiento que gestionar
             </h1>
-            <p className="text-xl text-slate-300">
+            <p className="text-xl text-slate-400">
               Consorcios, hoteles, plantas y edificios corporativos. El mismo problema, el mismo canal, la misma solución.
             </p>
           </div>
@@ -131,35 +133,35 @@ export default function IndustriasPage() {
       </section>
 
       {/* Industries */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-950">
         <Container>
           <div className="space-y-24">
-            {industries.map((ind, idx) => (
+            {industries.map((ind) => (
               <div
                 key={ind.id}
                 id={ind.id}
-                className={`grid md:grid-cols-2 gap-10 items-start ${idx % 2 === 1 ? '' : ''}`}
+                className="grid md:grid-cols-2 gap-10 items-start"
               >
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-4xl">{ind.icon}</span>
-                    <span className="bg-indigo-100 text-indigo-700 text-xs font-semibold px-2.5 py-1 rounded-full">
+                    <span className="bg-indigo-500/15 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full border border-indigo-500/25">
                       {ind.tag}
                     </span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 mb-1">
                     {ind.title}
                   </h2>
-                  <p className="text-sm text-indigo-600 font-medium mb-4">{ind.subtitle}</p>
-                  <p className="text-slate-600 mb-6">{ind.desc}</p>
-                  <div className="bg-green-50 rounded-xl p-5 border border-green-100">
-                    <h4 className="text-sm font-semibold text-green-800 mb-3 uppercase tracking-wide">
+                  <p className="text-sm text-indigo-400 font-medium mb-4">{ind.subtitle}</p>
+                  <p className="text-slate-400 mb-6">{ind.desc}</p>
+                  <div className="bg-slate-900 rounded-xl p-5 border border-green-500/20">
+                    <h4 className="text-sm font-semibold text-green-400 mb-3 uppercase tracking-wide">
                       Impacto esperado
                     </h4>
                     <ul className="space-y-2">
                       {ind.impact.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                          <span className="text-green-500 font-bold mt-0.5">→</span>
+                        <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
+                          <span className="text-green-400 font-bold mt-0.5">→</span>
                           {item}
                         </li>
                       ))}
@@ -167,13 +169,13 @@ export default function IndustriasPage() {
                   </div>
                 </div>
                 <div>
-                  <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                  <div className="bg-slate-900 rounded-2xl p-6 border border-white/8">
                     <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">
                       Tipos de reclamos que maneja
                     </h3>
                     <ul className="space-y-2">
                       {ind.uses.map((use) => (
-                        <li key={use} className="flex items-start gap-2 text-sm text-slate-700">
+                        <li key={use} className="flex items-start gap-2 text-sm text-slate-300">
                           <span className="text-indigo-400 mt-0.5">•</span>
                           {use}
                         </li>
@@ -188,10 +190,11 @@ export default function IndustriasPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-indigo-600 text-white">
-        <Container>
+      <section className="py-20 bg-cta-gradient relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-15" />
+        <Container className="relative">
           <div className="text-center max-w-xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">¿Tu industria no está acá?</h2>
+            <h2 className="text-3xl font-bold mb-4 text-white">¿Tu industria no está acá?</h2>
             <p className="text-indigo-200 mb-8">
               Si gestionás un espacio físico con reclamos de mantenimiento, Eliseo probablemente
               puede ayudarte. Conversemos y lo evaluamos.
@@ -205,7 +208,7 @@ export default function IndustriasPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 size="lg"
-                className="bg-green-500 border-green-500 text-white hover:bg-green-600 hover:border-green-600 border"
+                className="bg-green-500/15 border border-green-400/40 text-green-300 hover:bg-green-500/25 transition-colors"
               >
                 💬 WhatsApp directo
               </Button>
